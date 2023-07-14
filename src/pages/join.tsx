@@ -7,7 +7,7 @@ const Join: NextPage = () => {
 
   return (
     <main className="flex h-full min-h-screen flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-[#2e026d] to-[#15162c]">
-      <section className="container flex flex-col items-center justify-center gap-12 px-4 py-16 font-jost">
+      <section className="flex flex-row items-stretch justify-center font-jost">
         <article className="grid grid-flow-col grid-cols-2">
           <div className="flex flex-col items-center justify-center gap-4">
             <h1 className="text-5xl font-bold text-white sm:text-[5rem]">
