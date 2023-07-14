@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import "~/styles/globals.css";
+import { api } from "~/utils/api";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
@@ -98,4 +99,4 @@ const Footer: React.FC = () => {
   );
 };
 
-export default MyApp;
+export default api.withTRPC(MyApp);

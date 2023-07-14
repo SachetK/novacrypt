@@ -3,7 +3,7 @@ import { z } from "zod";
 import { api } from "~/utils/api";
 
 const Join: NextPage = () => {
-
+  
   const join = api.sheet.append.useMutation();
 
   return (
@@ -31,6 +31,8 @@ const Join: NextPage = () => {
                   new FormData(e.currentTarget).entries()
                 );
 
+                console.log(formValues)
+
                 const values = z
                   .object({
                     name: z.string(),
@@ -49,41 +51,45 @@ const Join: NextPage = () => {
                 join.mutate(values.data);
               }}
             >
-              <label className="flex flex-col items-center text-white">
+              <label className="flex flex-col items-center text-white" >
                 Name
                 <input
                   className="rounded-xl px-4 py-2 text-lg font-bold text-black transition-colors duration-200 ease-in-out hover:bg-white/20 hover:text-white"
                   type="text"
+                  name="name"
                 />
               </label>
 
-              <label className="flex flex-col items-center text-white">
+              <label className="flex flex-col items-center text-white" >
                 Email
                 <input
                   className="rounded-xl px-4 py-2 text-lg font-bold text-black transition-colors duration-200 ease-in-out hover:bg-white/20 hover:text-white"
                   type="text"
+                  name="email"
                 />
               </label>
 
-              <label className="flex flex-col items-center text-white">
+              <label className="flex flex-col items-center text-white" >
                 School
                 <input
                   className="rounded-xl px-4 py-2 text-lg font-bold text-black transition-colors duration-200 ease-in-out hover:bg-white/20 hover:text-white"
                   type="text"
+                  name="school"
                 />
               </label>
 
-              <label className="flex flex-col items-center text-white">
+              <label className="flex flex-col items-center text-white" >
                 Grade
                 <input
                   className="rounded-xl px-4 py-2 text-lg font-bold text-black transition-colors duration-200 ease-in-out hover:bg-white/20 hover:text-white"
                   type="text"
+                  name="grade"
                 />
               </label>
 
-              <label className="flex flex-col items-center text-white">
+              <label className="flex flex-col items-center text-white" >
                 Why do you want to join NovaCrypt?
-                <textarea className="rounded-xl px-4 py-2 text-lg font-bold text-black transition-colors duration-200 ease-in-out hover:bg-white/20 hover:text-white" />
+                <textarea className="rounded-xl px-4 py-2 text-lg font-bold text-black transition-colors duration-200 ease-in-out hover:bg-white/20 hover:text-white" name="reason"/>
               </label>
               <button
                 className="rounded-xl px-4 py-2 text-lg font-bold text-white transition-colors duration-200 ease-in-out hover:bg-white/20"
