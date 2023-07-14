@@ -22,18 +22,17 @@ export const sheetRouter = createTRPCRouter({
         }),
       });
 
-      const result = await sheets.spreadsheets.values
-        .append({
-          spreadsheetId: "1-MFYEkeBtQVNhFxRqUJ6uPTaV_t-97932rSOSozN5S8",
-          range: "A1",
-          valueInputOption: "USER_ENTERED",
-          requestBody: {
-            values: [[name, email, school, grade, reason]],
-          },
-        })
+      const result = await sheets.spreadsheets.values.append({
+        spreadsheetId: "1-MFYEkeBtQVNhFxRqUJ6uPTaV_t-97932rSOSozN5S8",
+        range: "A1",
+        valueInputOption: "USER_ENTERED",
+        requestBody: {
+          values: [[name, email, school, grade, reason]],
+        },
+      });
 
-        console.log(`${result.data.updates?.updatedCells ?? 0} cells appended.`)
+      console.log(`${result.data.updates?.updatedCells ?? 0} cells appended.`);
 
-        return result.data.updates?.updatedCells ?? 0;
+      return result.data.updates?.updatedCells ?? 0;
     }),
 });
