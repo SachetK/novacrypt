@@ -40,7 +40,7 @@ const Header: React.FC = () => {
           Join
         </Link>
         <Link
-          href="/programs"
+          href="/team"
           className="rounded-xl px-4 py-2 text-lg font-bold text-white transition-colors duration-200 ease-in-out hover:bg-white/20"
         >
           Programs
