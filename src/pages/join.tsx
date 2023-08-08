@@ -1,10 +1,11 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { z } from "zod";
+import { LoadingSpinner } from "~/components/loading";
 import { api } from "~/utils/api";
 
 const Join: NextPage = () => {
-  const join = api.sheet.append.useMutation();
+  const { mutateAsync: addToList, isLoading, isError, isSuccess, isIdle } = api.sheet.append.useMutation();
 
   return (
     <main className="flex h-full min-h-screen flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-[#2e026d] to-[#15162c]">
@@ -21,12 +22,15 @@ const Join: NextPage = () => {
             <h2 className="text-center text-xl font-normal text-white sm:text-2xl">
               Interested in joining NovaCrypt?
               <br />
-              Fill out the form below and we&apos;ll get back to you as soon as
+              Fill out the form to the right and we&apos;ll get back to you as soon as
               possible!
             </h2>
           </div>
           <div className="flex flex-col items-center justify-center gap-4 word-spacing-half">
-            <form
+            {isLoading && <LoadingSpinner size={64}/>}
+            {isError && <p className="text-white text-center text-3xl">Error! Please reload and try again</p>}
+            {isSuccess && <p className="text-white text-center text-3xl">Success!</p>}
+            {isIdle && <form
               className="grid grid-cols-1 place-items-center gap-4"
               onSubmit={(e) => {
                 e.preventDefault();
@@ -34,8 +38,6 @@ const Join: NextPage = () => {
                 const formValues = Object.fromEntries(
                   new FormData(e.currentTarget).entries()
                 );
-
-                console.log(formValues);
 
                 const values = z
                   .object({
@@ -52,7 +54,7 @@ const Join: NextPage = () => {
                   return;
                 }
 
-                join.mutate(values.data);
+                void addToList(values.data);
               }}
             >
               <label className="flex flex-col items-center text-white">
@@ -104,7 +106,7 @@ const Join: NextPage = () => {
               >
                 Submit
               </button>
-            </form>
+            </form>}
           </div>
         </article>
       </section>
