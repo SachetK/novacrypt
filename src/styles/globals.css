@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    .word-spacing-half {
+        word-spacing: 0.125rem;
+    }
+}

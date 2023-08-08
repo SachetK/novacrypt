@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Head from "next/head";
 import { z } from "zod";
 import { api } from "~/utils/api";
 
@@ -7,6 +8,10 @@ const Join: NextPage = () => {
 
   return (
     <main className="flex h-full min-h-screen flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-[#2e026d] to-[#15162c]">
+      <Head>
+        <title>Join | NovaCrypt</title>
+        <meta name="description" content="Join NovaCrypt" />
+      </Head>
       <section className="flex flex-row items-stretch justify-center font-jost">
         <article className="grid grid-flow-col grid-cols-2">
           <div className="flex flex-col items-center justify-center gap-4">
@@ -20,7 +25,7 @@ const Join: NextPage = () => {
               possible!
             </h2>
           </div>
-          <div className="flex flex-col items-center justify-center gap-4">
+          <div className="flex flex-col items-center justify-center gap-4 word-spacing-half">
             <form
               className="grid grid-cols-1 place-items-center gap-4"
               onSubmit={(e) => {
@@ -53,7 +58,7 @@ const Join: NextPage = () => {
               <label className="flex flex-col items-center text-white">
                 Name
                 <input
-                  className="rounded-xl px-4 py-2 text-lg font-bold text-black transition-colors duration-200 ease-in-out hover:bg-white/20 hover:text-white"
+                  className="rounded-xl px-4 py-2 text-lg text-black word-spacing-half transition-colors duration-200 ease-in-out hover:bg-white/20 hover:text-white"
                   type="text"
                   name="name"
                 />
@@ -62,7 +67,7 @@ const Join: NextPage = () => {
               <label className="flex flex-col items-center text-white">
                 Email
                 <input
-                  className="rounded-xl px-4 py-2 text-lg font-bold text-black transition-colors duration-200 ease-in-out hover:bg-white/20 hover:text-white"
+                  className="rounded-xl px-4 py-2 text-lg text-black word-spacing-half transition-colors duration-200 ease-in-out hover:bg-white/20 hover:text-white"
                   type="text"
                   name="email"
                 />
@@ -71,7 +76,7 @@ const Join: NextPage = () => {
               <label className="flex flex-col items-center text-white">
                 School
                 <input
-                  className="rounded-xl px-4 py-2 text-lg font-bold text-black transition-colors duration-200 ease-in-out hover:bg-white/20 hover:text-white"
+                  className="rounded-xl px-4 py-2 text-lg text-black word-spacing-half transition-colors duration-200 ease-in-out hover:bg-white/20 hover:text-white"
                   type="text"
                   name="school"
                 />
@@ -80,7 +85,7 @@ const Join: NextPage = () => {
               <label className="flex flex-col items-center text-white">
                 Grade
                 <input
-                  className="rounded-xl px-4 py-2 text-lg font-bold text-black transition-colors duration-200 ease-in-out hover:bg-white/20 hover:text-white"
+                  className="rounded-xl px-4 py-2 text-lg text-black word-spacing-half transition-colors duration-200 ease-in-out hover:bg-white/20 hover:text-white"
                   type="text"
                   name="grade"
                 />
@@ -89,12 +94,12 @@ const Join: NextPage = () => {
               <label className="flex flex-col items-center text-white">
                 Why do you want to join NovaCrypt?
                 <textarea
-                  className="rounded-xl px-4 py-2 text-lg font-bold text-black transition-colors duration-200 ease-in-out hover:bg-white/20 hover:text-white"
+                  className="rounded-xl px-4 py-2 text-lg text-black word-spacing-half transition-colors duration-200 ease-in-out hover:bg-white/20 hover:text-white"
                   name="reason"
                 />
               </label>
               <button
-                className="rounded-xl px-4 py-2 text-lg font-bold text-white transition-colors duration-200 ease-in-out hover:bg-white/20"
+                className="rounded-xl px-4 py-2 text-lg text-white transition-colors duration-200 ease-in-out hover:bg-white/20"
                 type="submit"
               >
                 Submit
