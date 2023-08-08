@@ -1,6 +1,7 @@
 import { GoogleAuth } from "google-auth-library";
 import { google } from "googleapis";
 import { z } from "zod";
+import { env } from "~/env.mjs";
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 
 export const sheetRouter = createTRPCRouter({
@@ -19,15 +20,23 @@ export const sheetRouter = createTRPCRouter({
         version: "v4",
         auth: new GoogleAuth({
           scopes: "https://www.googleapis.com/auth/spreadsheets",
+          authClient: new google.auth.JWT(
+            env.GOOGLE_SHEETS_CLIENT_EMAIL,
+            undefined,
+            env.GOOGLE_SHEETS_PRIVATE_KEY,
+            "https://www.googleapis.com/auth/spreadsheets"
+          ),  
         }),
       });
 
+      
+
       const result = await sheets.spreadsheets.values.append({
-        spreadsheetId: "1-MFYEkeBtQVNhFxRqUJ6uPTaV_t-97932rSOSozN5S8",
+        spreadsheetId: env.SPREADSHEET_ID,
         range: "A1",
         valueInputOption: "USER_ENTERED",
         requestBody: {
-          values: [[name, email, school, grade, reason]],
+          values: [[new Date(), name, email, school, grade, reason]],
         },
       });
 
