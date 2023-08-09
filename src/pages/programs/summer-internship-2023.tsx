@@ -12,7 +12,7 @@ const Programs: NextPage = () => {
           content="Summer Internship 2023 page for NovaCrypt"
         />
       </Head>
-      <h1 className="w-full p-8 text-center font-jost text-5xl word-spacing-half text-white">
+      <h1 className="word-spacing-half w-full p-8 text-center font-jost text-5xl text-white">
         Summer Internship
       </h1>
       <section className="m-2 flex h-full w-2/5 flex-col items-center justify-center space-y-3 text-white">
