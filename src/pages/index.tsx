@@ -6,6 +6,7 @@ import React from "react";
 import dev from "public/novadev.png";
 import stem from "public/novastem.png";
 import build from "public/novabuild.png";
+import Link from "next/link";
 
 const Home: NextPage = () => {
   return (
@@ -83,9 +84,9 @@ const About: React.FC = () => {
         <Image
           src={build}
           alt="About"
-          className="relative z-auto row-span-2 place-self-center object-contain object-center md:w-2/3"
+          className="relative z-auto row-span-3 place-self-center object-contain object-center md:w-2/3"
         />
-        <h1 className="text-3xl font-semibold text-white sm:text-5xl">
+        <h1 className="text-3xl font-semibold text-center text-white sm:text-5xl">
           Who are we?
         </h1>
         <p className="text-white">
@@ -98,14 +99,19 @@ const About: React.FC = () => {
           currently shifted our focus away from research and we have brought on
           a new team to introduce STEM learning and opportunities to students.
         </p>
+        <div className="flex justify-center">
+          <Link href="/team" className="text-center font-bold text-white py-3 px-4 rounded-xl transition-colors duration-200 bg-purple-700/30 hover:bg-white/40">
+            Learn More
+          </Link>
+        </div>
       </div>
       <div className="grid grid-cols-2 place-content-center gap-y-4">
         <Image
           src={stem}
           alt="About"
-          className="relative z-auto row-span-2 place-self-center object-contain object-center md:w-2/3"
+          className="relative z-auto row-span-3 place-self-center object-contain object-center md:w-2/3"
         />
-        <h1 className="text-3xl font-semibold text-white sm:text-5xl">
+        <h1 className="text-3xl font-semibold text-center text-white sm:text-5xl">
           Our Mission
         </h1>
         <p className="text-white">
@@ -117,14 +123,19 @@ const About: React.FC = () => {
           computer science, physics, public health, etc. These problems will
           often revolve around real world scenarios for students to address.
         </p>
+        <div className="flex justify-center">
+          <Link href="/programs" className="text-center font-bold text-white py-3 px-4 rounded-xl transition-colors duration-200 bg-purple-700/30 hover:bg-white/40">
+            Learn More
+          </Link>
+        </div>
       </div>
       <div className="grid grid-cols-2 place-content-center gap-y-4">
         <Image
           src={dev}
           alt="About"
-          className="relative z-auto row-span-2 place-self-center object-contain object-center md:w-2/3"
+          className="relative z-auto row-span-3 place-self-center object-contain object-center md:w-2/3"
         />
-        <h1 className="text-3xl font-semibold text-white sm:text-5xl">
+        <h1 className="text-3xl font-semibold text-center text-white sm:text-5xl">
           Our Program
         </h1>
         <p className="text-white">
@@ -137,7 +148,7 @@ const About: React.FC = () => {
           presentation in which they are given background information about the
           topic and more details about the field. They will also be given
           possible ideas about the direction the topic could head in.
-          <br />
+          {/* <br />
           <br />
           The following week students will have an opportunity to listen to an
           expert give their insight about the topic. Students will be able to
@@ -161,8 +172,13 @@ const About: React.FC = () => {
           recognition in our newsletter. Specially recognized members may have
           opportunities at internships and other research opportunities in the
           future. Winning teams will receive scholarship money from our
-          sponsors.
+          sponsors. */}
         </p>
+        <div className="flex justify-center">
+          <Link href="/" className="text-center font-bold text-white py-3 px-4 rounded-xl transition-colors duration-200 bg-purple-700/30 hover:bg-white/40">
+            Learn More
+          </Link>
+        </div>
       </div>
     </div>
   );
