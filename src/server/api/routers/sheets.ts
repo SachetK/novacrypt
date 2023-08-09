@@ -25,11 +25,9 @@ export const sheetRouter = createTRPCRouter({
             undefined,
             env.GOOGLE_SHEETS_PRIVATE_KEY,
             "https://www.googleapis.com/auth/spreadsheets"
-          ),  
+          ),
         }),
       });
-
-      
 
       const result = await sheets.spreadsheets.values.append({
         spreadsheetId: env.SPREADSHEET_ID,

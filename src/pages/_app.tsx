@@ -34,7 +34,7 @@ const Header: React.FC = () => {
           Team
         </Link>
         <Link
-          href="/team"
+          href="/programs"
           className="rounded-xl px-4 py-2 text-lg font-bold text-white transition-colors duration-200 ease-in-out hover:bg-white/20"
         >
           Programs

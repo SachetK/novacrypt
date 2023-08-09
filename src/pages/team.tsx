@@ -3,7 +3,7 @@ import Head from "next/head";
 
 const TeamPage: NextPage = () => {
   return (
-    <main className="flex h-full min-h-screen flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-[#2e026d] to-[#15162c]">
+    <main className="flex h-full min-h-screen flex-col items-center justify-center overflow-hidden bg-[#0b0c1a]">
       <Head>
         <title>NovaCrypt | Team</title>
         <meta name="description" content="Team page for NovaCrypt" />

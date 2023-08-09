@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer utilities {
-    .word-spacing-half {
-        word-spacing: 0.125rem;
-    }
+  .word-spacing-half {
+    word-spacing: 0.125rem;
+  }
 }

@@ -10,7 +10,6 @@ export default {
       fontFamily: {
         jost: ["Reem Kufi", "sans-serif"],
       },
-      
     },
   },
   plugins: [],

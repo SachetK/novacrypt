@@ -8,7 +8,10 @@ export const env = createEnv({
    */
   server: {
     NODE_ENV: z.enum(["development", "test", "production"]),
-    GOOGLE_SHEETS_PRIVATE_KEY: z.string().min(1).transform((v) => v.replace(/\\n/g, "\n")),
+    GOOGLE_SHEETS_PRIVATE_KEY: z
+      .string()
+      .min(1)
+      .transform((v) => v.replace(/\\n/g, "\n")),
     GOOGLE_SHEETS_CLIENT_EMAIL: z.string().min(1),
     SPREADSHEET_ID: z.string().min(1),
   },

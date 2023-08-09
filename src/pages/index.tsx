@@ -86,7 +86,7 @@ const About: React.FC = () => {
           alt="About"
           className="relative z-auto row-span-3 place-self-center object-contain object-center md:w-2/3"
         />
-        <h1 className="text-3xl font-semibold text-center text-white sm:text-5xl">
+        <h1 className="text-center text-3xl font-semibold text-white sm:text-5xl">
           Who are we?
         </h1>
         <p className="text-white">
@@ -99,8 +99,11 @@ const About: React.FC = () => {
           currently shifted our focus away from research and we have brought on
           a new team to introduce STEM learning and opportunities to students.
         </p>
-        <div className="flex justify-center">
-          <Link href="/team" className="text-center font-bold text-white py-3 px-4 rounded-xl transition-colors duration-200 bg-purple-700/30 hover:bg-white/40">
+        <div className="m-2 flex justify-center">
+          <Link
+            href="/team"
+            className="rounded-xl bg-purple-700/30 px-4 py-3 text-center font-bold text-white transition-colors duration-200 hover:bg-white/40"
+          >
             Learn More
           </Link>
         </div>
@@ -111,7 +114,7 @@ const About: React.FC = () => {
           alt="About"
           className="relative z-auto row-span-3 place-self-center object-contain object-center md:w-2/3"
         />
-        <h1 className="text-3xl font-semibold text-center text-white sm:text-5xl">
+        <h1 className="text-center text-3xl font-semibold text-white sm:text-5xl">
           Our Mission
         </h1>
         <p className="text-white">
@@ -123,8 +126,11 @@ const About: React.FC = () => {
           computer science, physics, public health, etc. These problems will
           often revolve around real world scenarios for students to address.
         </p>
-        <div className="flex justify-center">
-          <Link href="/programs" className="text-center font-bold text-white py-3 px-4 rounded-xl transition-colors duration-200 bg-purple-700/30 hover:bg-white/40">
+        <div className="m-2 flex justify-center">
+          <Link
+            href="/programs"
+            className="rounded-xl bg-purple-700/30 px-4 py-3 text-center font-bold text-white transition-colors duration-200 hover:bg-white/40"
+          >
             Learn More
           </Link>
         </div>
@@ -135,7 +141,7 @@ const About: React.FC = () => {
           alt="About"
           className="relative z-auto row-span-3 place-self-center object-contain object-center md:w-2/3"
         />
-        <h1 className="text-3xl font-semibold text-center text-white sm:text-5xl">
+        <h1 className="text-center text-3xl font-semibold text-white sm:text-5xl">
           Our Program
         </h1>
         <p className="text-white">
@@ -144,38 +150,13 @@ const About: React.FC = () => {
           students in the chapter, the chapter should form teams of around 3-5
           members. The teams will compete challenges around topics including
           subjects like astrophysics, biology, medicine, and other related STEM
-          topics. At the beginning of the cycle, each chapter will receive a
-          presentation in which they are given background information about the
-          topic and more details about the field. They will also be given
-          possible ideas about the direction the topic could head in.
-          {/* <br />
-          <br />
-          The following week students will have an opportunity to listen to an
-          expert give their insight about the topic. Students will be able to
-          participate and ask a variety of questions to the guest speaker about
-          the current research in the field as well as their own possible
-          insight into the topic.
-          <br />
-          <br />
-          Week three will focus on an activity based around the topic, which the
-          NovaCrypt team will provide to advisors.
-          <br />
-          <br />
-          The next two weeks of club meetings are dedicated towards project
-          workdays. Although the teams will be able to begin working before
-          these two club meetings, the last two weeks of the month will be
-          reserved towards the team finalizing their solutions for submission to
-          NovaCrypt.
-          <br />
-          <br />
-          Each month, the winning teams as well as the standouts will receive
-          recognition in our newsletter. Specially recognized members may have
-          opportunities at internships and other research opportunities in the
-          future. Winning teams will receive scholarship money from our
-          sponsors. */}
+          topics.
         </p>
-        <div className="flex justify-center">
-          <Link href="/" className="text-center font-bold text-white py-3 px-4 rounded-xl transition-colors duration-200 bg-purple-700/30 hover:bg-white/40">
+        <div className="m-2 flex justify-center">
+          <Link
+            href="/"
+            className="rounded-xl bg-purple-700/30 px-4 py-3 text-center font-bold text-white transition-colors duration-200 hover:bg-white/40"
+          >
             Learn More
           </Link>
         </div>
