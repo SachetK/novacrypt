@@ -80,7 +80,7 @@ const Support: React.FC = () => {
 const About: React.FC = () => {
   return (
     <div className="m-8 flex flex-col space-y-8 lg:w-1/2">
-      <div className="grid grid-cols-2 place-content-center gap-y-4">
+      <div className="grid grid-cols-2 place-content-center place-items-center gap-y-4">
         <Image
           src={build}
           alt="About"
@@ -108,7 +108,7 @@ const About: React.FC = () => {
           </Link>
         </div>
       </div>
-      <div className="grid grid-cols-2 place-content-center gap-y-4">
+      <div className="grid grid-cols-2 place-content-center place-items-center gap-y-4">
         <Image
           src={stem}
           alt="About"
@@ -135,7 +135,7 @@ const About: React.FC = () => {
           </Link>
         </div>
       </div>
-      <div className="grid grid-cols-2 place-content-center gap-y-4">
+      <div className="grid grid-cols-2 place-content-center place-items-center gap-y-4">
         <Image
           src={dev}
           alt="About"
@@ -152,7 +152,7 @@ const About: React.FC = () => {
           subjects like astrophysics, biology, medicine, and other related STEM
           topics.
         </p>
-        <div className="m-2 flex justify-center">
+        <div className="m-2">
           <Link
             href="/"
             className="rounded-xl bg-purple-700/30 px-4 py-3 text-center font-bold text-white transition-colors duration-200 hover:bg-white/40"
