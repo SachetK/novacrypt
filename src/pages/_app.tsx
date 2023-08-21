@@ -40,6 +40,12 @@ const Header: React.FC = () => {
           Programs
         </Link>
         <Link
+          href="/news"
+          className="rounded-xl px-4 py-2 text-lg font-bold text-white transition-colors duration-200 ease-in-out hover:bg-white/20"
+        >
+          News
+        </Link>
+        <Link
           href="/join"
           className="rounded-xl px-4 py-2 text-lg font-bold text-white transition-colors duration-200 ease-in-out hover:bg-white/20"
         >

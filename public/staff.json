@@ -1,0 +1,19 @@
+{
+  "staff": [
+    {
+      "name": "Bri Johnson",
+      "description": "Meet our CEO! Bri Johnson is a Freshman at Embry-Riddle Aeronautical University in Florida. She is currently majoring in Astrophysics and Global Conflict.      ",
+      "image": "http://www.example.com/john.jpg"
+    },
+    {
+      "name": "Aayan Rahat",
+      "description": "Meet our COO! Aayan Rahat is a junior at Centennial High School in Texas. He plans to study computer science.      ",
+      "image": "http://www.example.com/jane.jpg"
+    },
+    {
+      "name": "Edmund Elbert",
+      "description": "Meet our COD! Edmund Elbert is a senior at Bishop Allen Academy in Toronto. He plans to study commerce and management.",
+      "image": "http://www.example.com/jack.jpg"
+    }
+  ]
+}

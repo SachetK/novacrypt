@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import { Carousel } from "~/components/carousel";
 
 const Programs: NextPage = () => {
   return (
@@ -15,13 +16,26 @@ const Programs: NextPage = () => {
           Summer Internship 2023
         </h2>
         <section className="flex flex-row items-center gap-4">
-          <Image
-            src="/support/nasa.png"
-            alt="Best Projects"
-            width={200}
-            height={100}
-          />
-          Insert carousel here later
+          <Carousel>
+            <Image
+              src="/support/nasa.png"
+              alt="Best Projects"
+              width={200}
+              height={100}
+            />
+            <Image
+              src="/support/cambridge.png"
+              alt="Best Projects"
+              width={200}
+              height={100}
+            />
+            <Image
+              src="/support/columbia.png"
+              alt="Best Projects"
+              width={200}
+              height={100}
+            />
+          </Carousel>
         </section>
         <Link
           href="/programs/summer-internship-2023"

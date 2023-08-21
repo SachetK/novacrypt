@@ -14,7 +14,7 @@ const Join: NextPage = () => {
   } = api.sheet.append.useMutation();
 
   return (
-    <main className="flex h-full min-h-screen flex-col items-center justify-center overflow-hidden bg-[#0b0c1a]">
+    <main className="flex h-full min-h-screen flex-col items-center justify-center bg-[#0b0c1a] p-16">
       <Head>
         <title>Join | NovaCrypt</title>
         <meta name="description" content="Join NovaCrypt" />

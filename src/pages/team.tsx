@@ -1,5 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import Image from "next/image";
+import team from "public/staff.json";
 
 const TeamPage: NextPage = () => {
   return (
@@ -10,9 +12,35 @@ const TeamPage: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <section className="container flex flex-col items-center justify-center gap-12 px-4 py-16 font-jost">
-        <article className="grid grid-flow-col grid-cols-2"></article>
+        <h1 className="text-4xl word-spacing-half font-bold text-center text-white">Meet our Team!</h1>
+        <article className="flex flex-col gap-16 text-white w-1/2">
+          {team.staff.map((person, idx) => (
+            <Person
+              key={idx}
+              image={person.image}
+              name={person.name}
+              description={person.description}
+            />
+          ))}
+        </article>
       </section>
     </main>
+  );
+};
+
+const Person: React.FC<{
+  image: string;
+  name: string;
+  description: string;
+}> = ({ image: _image, name, description }) => {
+  return (
+    <div className="flex flex-row items-center justify-center gap-4">
+      <Image src={"/logo.png"} alt={name} height={100} width={100} className="h-32 w-32 rounded-full" />
+      <div className="flex flex-col justify-center">
+        <h3 className="text-2xl word-spacing-half font-bold">{name}</h3>
+        <p className="text-lg word-spacing-half">{description}</p>
+      </div>
+    </div>
   );
 };
 
