@@ -12,8 +12,10 @@ const TeamPage: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <section className="container flex flex-col items-center justify-center gap-12 px-4 py-16 font-jost">
-        <h1 className="text-4xl word-spacing-half font-bold text-center text-white">Meet our Team!</h1>
-        <article className="flex flex-col gap-16 text-white w-1/2">
+        <h1 className="word-spacing-half text-center text-4xl font-bold text-white">
+          Meet our Team!
+        </h1>
+        <article className="flex w-1/2 flex-col gap-16 text-white">
           {team.staff.map((person, idx) => (
             <Person
               key={idx}
@@ -35,10 +37,16 @@ const Person: React.FC<{
 }> = ({ image: _image, name, description }) => {
   return (
     <div className="flex flex-row items-center justify-center gap-4">
-      <Image src={"/logo.png"} alt={name} height={100} width={100} className="h-32 w-32 rounded-full" />
+      <Image
+        src={"/logo.png"}
+        alt={name}
+        height={100}
+        width={100}
+        className="h-32 w-32 rounded-full"
+      />
       <div className="flex flex-col justify-center">
-        <h3 className="text-2xl word-spacing-half font-bold">{name}</h3>
-        <p className="text-lg word-spacing-half">{description}</p>
+        <h3 className="word-spacing-half text-2xl font-bold">{name}</h3>
+        <p className="word-spacing-half text-lg">{description}</p>
       </div>
     </div>
   );

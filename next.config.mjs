@@ -20,7 +20,7 @@ const config = {
   },
   images: {
     domains: ["www.example.com"],
-  }
+  },
 };
 
 export default config;
