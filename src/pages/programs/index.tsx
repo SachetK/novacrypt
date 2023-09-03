@@ -25,8 +25,8 @@ const Programs: NextPage = () => {
           url="/programs/summer-internship-2023"
         />
         <Program
-          name="Fall Opportunity 2023"
-          description="Coming into fall 2023, students could submit a project idea they wished to pursue and were matched up with a mentor accordingly. With a 1 to 1 ratio of students to mentors, each student will receive personalized guidance to complete their respective projects and goals. We are excited to see what students will be able to build by the end of the summer!"
+          name="Chapter Program"
+          description="Coming into fall 2023, students could submit a project idea they wished to pursue and were matched up with a mentor accordingly. Each student will receive personalized guidance to complete their respective projects and goals. We are excited to see what students will be able to build by the end of the summer!"
           url="/programs/summer-internship-2023"
         />
       </section>
