@@ -7,7 +7,7 @@
     "dev": "next dev",
     "lint": "next lint",
     "start": "next start",
-    "format": "prettier --write --ignore-path .gitignore . && pnpm lint -- --fix"
+    "format": "prettier --write --ignore-path .gitignore . && pnpm lint --fix"
   },
   "dependencies": {
     "@t3-oss/env-nextjs": "^0.3.1",

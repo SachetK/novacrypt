@@ -10,7 +10,7 @@ const Programs: NextPage = () => {
         <meta name="description" content="Programs page for NovaCrypt" />
       </Head>
 
-      <section className="flex lg:w-2/5 sm:w-3/5 w-full flex-col items-center justify-center space-y-3 m-2 p-2 text-white">
+      <section className="m-2 flex w-full flex-col items-center justify-center space-y-3 p-2 text-white sm:w-3/5 lg:w-2/5">
         <header className="m-2 w-full">
           <h1 className="text-center font-jost text-4xl font-bold text-white">
             Programs
@@ -44,9 +44,7 @@ const Program: React.FC<{ name: string; description: string; url: string }> = ({
       className="flex flex-row items-center justify-center space-y-3 rounded-xl bg-purple-700/30 px-4 py-3 text-center text-white transition-colors duration-200 hover:bg-white/40"
       href={url}
     >
-      <h2 className="w-full p-2 text-center font-jost text-3xl">
-        {name}
-      </h2>
+      <h2 className="w-full p-2 text-center font-jost text-3xl">{name}</h2>
       <div className="flex flex-col">
         <p className="text-md w-full p-2 text-center font-jost">
           {description}
