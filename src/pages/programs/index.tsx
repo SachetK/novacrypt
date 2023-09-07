@@ -23,22 +23,26 @@ const Programs: NextPage = () => {
           name="Summer Internship 2023"
           description="In the summer of 2023, Novacrypt and the National Institute of Technology, Sikkim, partnered together to further the goal of student enrichment in project development. Over six weeks students were guided to pursue and complete self-selected projects that interest them. We are very proud of our students!"
           // url="/programs/summer-internship-2023"
-          url="/programs"
+          url="/programs/chapter-program"
+          projects
+
         />
         <Program
           name="Chapter Program"
           description="Coming into fall 2023, students could submit a project idea they wished to pursue and were matched up with a mentor accordingly. Each student will receive personalized guidance to complete their respective projects and goals. We are excited to see what students will be able to build by the end of the summer!"
-          url="/programs/chapter-program"
+          url="/programs"
+          
         />
       </section>
     </main>
   );
 };
 
-const Program: React.FC<{ name: string; description: string; url: string }> = ({
+const Program: React.FC<{ name: string; description: string; url: string, projects?: boolean }> = ({
   name,
   description,
   url,
+  projects = false,
 }) => {
   return (
     <Link
@@ -50,6 +54,11 @@ const Program: React.FC<{ name: string; description: string; url: string }> = ({
         <p className="text-md w-full p-2 text-center font-jost">
           {description}
         </p>
+        {projects && (
+          <p className="text-lg font-bold w-full p-2 text-center font-jost">
+            Click to see the amazing projects!
+          </p>
+        )}
       </div>
     </Link>
   );
