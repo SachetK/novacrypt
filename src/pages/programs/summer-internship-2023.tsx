@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 
-const Programs: NextPage = () => {
+const SummerProgram: NextPage = () => {
   return (
     <main className="flex h-full min-h-screen flex-col items-center bg-[#0b0c1a]">
       <Head>
@@ -82,4 +82,4 @@ const Programs: NextPage = () => {
   );
 };
 
-export default Programs;
+export default SummerProgram;
