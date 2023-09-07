@@ -125,7 +125,7 @@ const Slideshow: React.FC<{ images: { src: string }[]; name: string }> = ({
   //Create a slideshow for the images provided and have the user be able to click through them, and they switch every second
 
   const [currentImage, setCurrentImage] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying] = useState(true);
 
   const timer = setTimeout(() => {
     setCurrentImage((currentImage + 1) % images.length);
