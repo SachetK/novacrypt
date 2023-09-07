@@ -22,7 +22,8 @@ const Programs: NextPage = () => {
         <Program
           name="Summer Internship 2023"
           description="In the summer of 2023, Novacrypt and the National Institute of Technology, Sikkim, partnered together to further the goal of student enrichment in project development. Over six weeks students were guided to pursue and complete self-selected projects that interest them. We are very proud of our students!"
-          url="/programs/summer-internship-2023"
+          // url="/programs/summer-internship-2023"
+          url="/programs"
         />
         <Program
           name="Chapter Program"
