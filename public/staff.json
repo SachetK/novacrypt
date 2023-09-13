@@ -14,6 +14,26 @@
       "name": "Jay Wankhede - CTO",
       "description": "Meet our CTO! Jay Wankhede is a senior at Poolesville Highschool. He plans to pursue  computer science with a focus on machine learning.",
       "image": "http://www.example.com/jack.jpg"
+    },
+    {
+      "name" : "Khandaker Wasi (Wasi) -  CFO",
+      "description": "Meet our CFO! Khandaker Wasi is a Junior at Poolesville High School in Maryland. He is interested in biology, more specifically Neuroscience",
+      "image": "http://www.example.com/jack.jpg"
+    },
+    {
+      "name": "Maani Prasad - Senior Marketing Officer",
+      "description": "Meet our SMO! Maansi Prasad is a Senior at Centennial High School in Texas. She is planning on pursuing a career in global businesses",
+      "image": "http://www.example.com/jack.jpg"
+    },
+    {
+      "name": "Krish Putta - Marketing Officer",
+      "description": "Meet Our Marketing Officer! Krish Putta is a Sophmore at Poolesville High School in Maryland. He is in the Science Math and Computer Science Program looking to pursue a career in business and computer science.",
+      "image": "http://www.example.com/jack.jpg"
+    },
+    {
+      "name": "Gordon Chang - Outreach Director",
+      "description": "Gordon is a freshman at University of California, Irvine. He is currently majoring in Biomedical Engineering.",
+      "image": "http://www.example.com/jack.jpg"
     }
   ]
 }
