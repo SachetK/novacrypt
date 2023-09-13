@@ -31,8 +31,13 @@
       "image": "http://www.example.com/jack.jpg"
     },
     {
-      "name": "Gordon Chang - Outreach Director",
+      "name": "Gordon Chang - Co-Outreach Director",
       "description": "Gordon is a freshman at University of California, Irvine. He is currently majoring in Biomedical Engineering.",
+      "image": "http://www.example.com/jack.jpg"
+    },
+    {
+      "name": "Stefan Hansen - Co-Outreach Director",
+      "description": "Meet our Outreach Director! Stefan Hansen is a Senior at Bishop Allen Academy in Ontario, Canada. He plans to pursue Vocal Performance at the University of Toronto.",
       "image": "http://www.example.com/jack.jpg"
     }
   ]
