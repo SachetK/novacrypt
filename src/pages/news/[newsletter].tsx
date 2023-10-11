@@ -1,8 +1,8 @@
-import { GetStaticProps, NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import { z } from "zod";
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps = ({ params }) => {
     const newsletter = z.enum(["october-2023"]).safeParse(params?.newsletter); 
 
     if (!newsletter.success) {
@@ -21,7 +21,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     };
 }
 
-export const getStaticPaths = async () => {
+export const getStaticPaths = () => {
     return {
         paths: [
             { params: { newsletter: "june-2022" } },
