@@ -4,34 +4,38 @@ import Link from "next/link";
 
 type Newsletter = {
   month: `${string} ${string}`;
-  page: string;
+  file: string;
 };
 
 const newsletters: Set<Newsletter> = new Set([
   {
     month: "April 2022",
-    page: "news/april-2022",
+    file: "news/april-2022",
   },
   {
     month: "May 2022",
-    page: "news/may-2022",
+    file: "news/may-2022",
   },
   {
     month: "June 2022",
-    page: "news/june-2022",
+    file: "news/june-2022",
   },
   {
     month: "July 2022",
-    page: "news/july-2022",
+    file: "news/july-2022",
   },
   {
     month: "July 2022",
-    page: "news/july-2022",
+    file: "news/july-2022",
   },
   {
     month: "September 2022",
-    page: "news/september-2022",
+    file: "news/september-2022",
   },
+  {
+    month: "October 2023",
+    file: "news/october-2023",
+  }
 ]);
 
 const News: NextPage = () => {
@@ -49,8 +53,7 @@ const News: NextPage = () => {
         <section className="m-2 grid h-4/5 grid-flow-row grid-cols-3 gap-4">
           {[...newsletters].map((newsletter) => (
             <Link
-              // href={newsletter.page}
-              href="/news"
+              href={newsletter.file}
               key={newsletter.month}
               className="rounded-xl bg-purple-500 text-center transition-all hover:scale-105 hover:bg-purple-800"
             >
