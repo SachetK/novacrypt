@@ -7,10 +7,7 @@ export const getStaticProps: GetStaticProps = ({ params }) => {
 
     if (!newsletter.success) {
         return {
-            redirect: {
-                destination: "/news",
-                permanent: false,
-            },
+            notFound: true,
         };
     }
 
