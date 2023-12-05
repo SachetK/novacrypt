@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 type Project =
   | {
@@ -52,13 +52,13 @@ const projects: Project[] = [
   },
 ];
 
-const ProjectCard: React.FC<Project | Record<string, never>> = (project) => {
+const ProjectCard: React.FC<{ project: Project | Record<string, never>, onEndAction: () => void }> = ({ project, onEndAction }) => {
   return (
     <div className="flex flex-col items-center justify-center space-y-3">
       
       {project.slideshow ? (
         <div className="flex flex-row items-center justify-center space-x-3">
-          <Slideshow images={project.images} name={project.name} />
+          <Slideshow images={project.images} name={project.name} endAction={onEndAction} />
         </div>
       ) : (
         <section className="max-w-1/4 h-1/4 w-1/2">
@@ -68,6 +68,7 @@ const ProjectCard: React.FC<Project | Record<string, never>> = (project) => {
             controls
             key={project.video}
             autoPlay
+            onEnded={onEndAction}
           >
             <source src={project.video} type={project.type} />
             Your browser does not support the video tag.
@@ -81,6 +82,14 @@ const ProjectCard: React.FC<Project | Record<string, never>> = (project) => {
 
 const ChapterProgram: NextPage = () => {
   const [currentProject, setCurrentProject] = useState(0);
+  
+  const toggleNextProject = useCallback(() => setCurrentProject(
+    (currentProject - 1 + projects.length) % projects.length
+  ), [currentProject])
+  
+  const togglePreviousProject = useCallback(() => setCurrentProject(
+    (currentProject - 1 + projects.length) % projects.length
+  ), [currentProject])  
 
   return (
     <main className="h-full min-h-screen bg-[#0b0c1a] text-center text-white">
@@ -89,26 +98,21 @@ const ChapterProgram: NextPage = () => {
         <meta name="description" content="Chapter Program page for NovaCrypt" />
       </Head>
       <section className="h-screen flex flex-col items-center justify-center space-y-3 p-2 text-white">
+        
         <div className="flex h-full w-1/2 flex-row items-center justify-center ">
           <button
             className="rounded-md border-2 border-white bg-[#0b0c1a] p-2 hover:bg-white hover:text-black"
             type="button"
-            onClick={() =>
-              setCurrentProject(
-                (currentProject - 1 + projects.length) % projects.length
-              )
-            }
+            onClick={togglePreviousProject}
           >
             {"<"}
           </button>
 
-          <ProjectCard {...projects[currentProject]} />
+          <ProjectCard project={projects[currentProject] ?? {}} onEndAction={toggleNextProject} />
           <button
             className="rounded-md border-2 border-white bg-[#0b0c1a] p-2 hover:bg-white hover:text-black"
             type="button"
-            onClick={() =>
-              setCurrentProject((currentProject + 1) % projects.length)
-            }
+            onClick={toggleNextProject}
           >
             {">"}
           </button>
@@ -118,14 +122,17 @@ const ChapterProgram: NextPage = () => {
   );
 };
 
-const Slideshow: React.FC<{ images: { src: string }[]; name: string }> = ({
+const Slideshow: React.FC<{ images: { src: string }[]; name: string, endAction: () => void }> = ({
   images,
   name,
+  endAction
 }) => {
   //Create a slideshow for the images provided and have the user be able to click through them, and they switch every second
 
   const [currentImage, setCurrentImage] = useState(0);
   const [isPlaying] = useState(true);
+
+  const nextAction = setTimeout(endAction, 20000)
 
   const timer = setTimeout(() => {
     setCurrentImage((currentImage + 1) % images.length);
@@ -139,6 +146,10 @@ const Slideshow: React.FC<{ images: { src: string }[]; name: string }> = ({
     return () => clearTimeout(timer);
   }, [isPlaying, timer]);
 
+
+  useEffect(() => {
+    return () => clearTimeout(nextAction)
+  }, [nextAction])
   return (
     <div className="flex flex-row items-center justify-center space-x-3">
       <Image

@@ -17,7 +17,7 @@ export const Carousel: React.FC<{ children: React.ReactNode }> = ({
   if (length < 1) return <></>;
 
   return (
-    <section className="flex ">
+    <section className="flex space-x-2">
       <button type="button" onClick={prevSlide}>
         Previous
       </button>
