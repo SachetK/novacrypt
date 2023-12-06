@@ -25,25 +25,23 @@ const Programs: NextPage = () => {
           // url="/programs/summer-internship-2023"
           url="/programs/chapter-program"
           projects
-
         />
         <Program
           name="Chapter Program"
           description="Coming into fall 2023, students could submit a project idea they wished to pursue and were matched up with a mentor accordingly. Each student will receive personalized guidance to complete their respective projects and goals. We are excited to see what students will be able to build by the end of the summer!"
           url="/programs"
-          
         />
       </section>
     </main>
   );
 };
 
-const Program: React.FC<{ name: string; description: string; url: string, projects?: boolean }> = ({
-  name,
-  description,
-  url,
-  projects = false,
-}) => {
+const Program: React.FC<{
+  name: string;
+  description: string;
+  url: string;
+  projects?: boolean;
+}> = ({ name, description, url, projects = false }) => {
   return (
     <Link
       className="flex flex-row items-center justify-center space-y-3 rounded-xl bg-purple-700/30 px-4 py-3 text-center text-white transition-colors duration-200 hover:bg-white/40"
@@ -55,7 +53,7 @@ const Program: React.FC<{ name: string; description: string; url: string, projec
           {description}
         </p>
         {projects && (
-          <p className="text-lg font-bold w-full p-2 text-center font-jost">
+          <p className="w-full p-2 text-center font-jost text-lg font-bold">
             Click to see the amazing projects!
           </p>
         )}

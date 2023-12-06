@@ -52,19 +52,25 @@ const projects: Project[] = [
   },
 ];
 
-const ProjectCard: React.FC<{ project: Project | Record<string, never>, onEndAction: () => void }> = ({ project, onEndAction }) => {
+const ProjectCard: React.FC<{
+  project: Project | Record<string, never>;
+  onEndAction: () => void;
+}> = ({ project, onEndAction }) => {
   return (
     <div className="flex flex-col items-center justify-center space-y-3">
-      
       {project.slideshow ? (
         <div className="flex flex-row items-center justify-center space-x-3">
-          <Slideshow images={project.images} name={project.name} endAction={onEndAction} />
+          <Slideshow
+            images={project.images}
+            name={project.name}
+            endAction={onEndAction}
+          />
         </div>
       ) : (
-        <section className="max-w-1/4 h-1/4 w-1/2">
+        <section className="h-1/2 w-1/2">
           <video
-            width="100%"
-            height="auto"
+            width="80%"
+            height="80%"
             controls
             key={project.video}
             autoPlay
@@ -82,14 +88,36 @@ const ProjectCard: React.FC<{ project: Project | Record<string, never>, onEndAct
 
 const ChapterProgram: NextPage = () => {
   const [currentProject, setCurrentProject] = useState(0);
-  
-  const toggleNextProject = useCallback(() => setCurrentProject(
-    (currentProject - 1 + projects.length) % projects.length
-  ), [currentProject])
-  
-  const togglePreviousProject = useCallback(() => setCurrentProject(
-    (currentProject - 1 + projects.length) % projects.length
-  ), [currentProject])  
+
+  const toggleNextProject = useCallback(
+    () =>
+      setCurrentProject(
+        (currentProject - 1 + projects.length) % projects.length
+      ),
+    [currentProject]
+  );
+
+  const togglePreviousProject = useCallback(
+    () =>
+      setCurrentProject(
+        (currentProject - 1 + projects.length) % projects.length
+      ),
+    [currentProject]
+  );
+
+  useEffect(() => {
+    const togglePages = (event: KeyboardEvent) => {
+      if (event.key === "ArrowRight") {
+        toggleNextProject();
+      } else if (event.key === "ArrowLeft") {
+        togglePreviousProject();
+      }
+    };
+
+    window.addEventListener("keydown", togglePages);
+
+    return () => window.removeEventListener("keydown", togglePages);
+  }, [toggleNextProject, togglePreviousProject]);
 
   return (
     <main className="h-full min-h-screen bg-[#0b0c1a] text-center text-white">
@@ -97,42 +125,30 @@ const ChapterProgram: NextPage = () => {
         <title>NovaCrypt | Chapter Program</title>
         <meta name="description" content="Chapter Program page for NovaCrypt" />
       </Head>
-      <section className="h-screen flex flex-col items-center justify-center space-y-3 p-2 text-white">
-        
+      <section className="flex h-screen flex-col items-center justify-center space-y-3 p-2 text-white">
         <div className="flex h-full w-1/2 flex-row items-center justify-center ">
-          <button
-            className="rounded-md border-2 border-white bg-[#0b0c1a] p-2 hover:bg-white hover:text-black"
-            type="button"
-            onClick={togglePreviousProject}
-          >
-            {"<"}
-          </button>
-
-          <ProjectCard project={projects[currentProject] ?? {}} onEndAction={toggleNextProject} />
-          <button
-            className="rounded-md border-2 border-white bg-[#0b0c1a] p-2 hover:bg-white hover:text-black"
-            type="button"
-            onClick={toggleNextProject}
-          >
-            {">"}
-          </button>
+          <ProjectCard
+            key={projects[currentProject]?.name ?? ""}
+            project={projects[currentProject] ?? {}}
+            onEndAction={toggleNextProject}
+          />
         </div>
       </section>
     </main>
   );
 };
 
-const Slideshow: React.FC<{ images: { src: string }[]; name: string, endAction: () => void }> = ({
-  images,
-  name,
-  endAction
-}) => {
+const Slideshow: React.FC<{
+  images: { src: string }[];
+  name: string;
+  endAction: () => void;
+}> = ({ images, name, endAction }) => {
   //Create a slideshow for the images provided and have the user be able to click through them, and they switch every second
 
   const [currentImage, setCurrentImage] = useState(0);
   const [isPlaying] = useState(true);
 
-  const nextAction = setTimeout(endAction, 20000)
+  const nextAction = setTimeout(endAction, 20000);
 
   const timer = setTimeout(() => {
     setCurrentImage((currentImage + 1) % images.length);
@@ -146,10 +162,9 @@ const Slideshow: React.FC<{ images: { src: string }[]; name: string, endAction: 
     return () => clearTimeout(timer);
   }, [isPlaying, timer]);
 
-
   useEffect(() => {
-    return () => clearTimeout(nextAction)
-  }, [nextAction])
+    return () => clearTimeout(nextAction);
+  }, [nextAction]);
   return (
     <div className="flex flex-row items-center justify-center space-x-3">
       <Image

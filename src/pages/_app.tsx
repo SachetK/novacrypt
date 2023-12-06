@@ -33,12 +33,31 @@ const Header: React.FC = () => {
         >
           Team
         </Link>
-        <Link
-          href="/programs"
-          className="rounded-xl px-4 py-2 text-lg font-bold text-white transition-colors duration-200 ease-in-out hover:bg-white/20"
-        >
-          Programs
-        </Link>
+        <div className="group/main">
+          <Link
+            href="/programs"
+            className="rounded-t-xl px-4 py-2 text-lg font-bold text-white transition-colors duration-200 ease-in-out group-hover/main:bg-white/20"
+          >
+            Programs
+          </Link>
+          <ul className="absolute my-2 hidden rounded-b-lg rounded-tr-lg bg-white/20 text-lg font-bold text-white group-hover/main:block">
+            <li className="my-2 px-4 py-2 text-lg font-bold text-white transition-all duration-200 ease-in-out hover:bg-white/40">
+              <Link href="/programs">Chapter Program</Link>
+            </li>
+            <li className="group/program my-2 px-4 py-2 text-lg font-bold text-white transition-all duration-200 ease-in-out group-hover/program:bg-white/40">
+              <Link href="/programs/chapter-program ">
+                Summer Internship 2023
+              </Link>
+              <ul className="mt-2 hidden font-bold text-white group-hover/program:block">
+                <li className="px-4 py-2 text-lg font-bold text-white transition-all duration-200 ease-in-out hover:bg-white/40">
+                  <Link href="/programs/chapter-program/showcase">
+                    Showcase
+                  </Link>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
         <Link
           href="/news"
           className="rounded-xl px-4 py-2 text-lg font-bold text-white transition-colors duration-200 ease-in-out hover:bg-white/20"
