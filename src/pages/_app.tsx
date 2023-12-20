@@ -42,19 +42,21 @@ const Header: React.FC = () => {
           </Link>
           <ul className="absolute my-2 hidden rounded-b-lg rounded-tr-lg bg-white/20 text-lg font-bold text-white group-hover/main:block">
             <li className="my-2 px-4 py-2 text-lg font-bold text-white transition-all duration-200 ease-in-out hover:bg-white/40">
-              <Link href="/programs">Chapter Program</Link>
+              <Link href="/programs/chapter-program">Chapter Program</Link>
             </li>
-            <li className="group/program my-2 px-4 py-2 text-lg font-bold text-white transition-all duration-200 ease-in-out group-hover/program:bg-white/40">
-              <Link href="/programs/chapter-program ">
+            <li className="group/program my-2 px-4 py-2 text-lg font-bold text-white transition-all duration-200 ease-in-out hover:bg-white/40">
+              {/* <div className="my-2 px-4 py-2 text-lg font-bold hover:bg-white/40"> */}
+              <Link href="/programs/summer-internship-2023">
                 Summer Internship 2023
               </Link>
-              <ul className="mt-2 hidden font-bold text-white group-hover/program:block">
-                <li className="px-4 py-2 text-lg font-bold text-white transition-all duration-200 ease-in-out hover:bg-white/40">
+              {/* </div> */}
+              {/* <ul className="mt-2 hidden font-bold text-white group-hover/program:block">
+                <li className="px-6 py-2 text-lg font-bold text-white transition-all duration-200 ease-in-out hover:bg-white/40">
                   <Link href="/programs/chapter-program/showcase">
                     Showcase
                   </Link>
                 </li>
-              </ul>
+              </ul> */}
             </li>
           </ul>
         </div>

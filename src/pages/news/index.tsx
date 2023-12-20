@@ -35,7 +35,7 @@ const newsletters: Set<Newsletter> = new Set([
   {
     month: "October 2023",
     file: "news/october-2023",
-  }
+  },
 ]);
 
 const News: NextPage = () => {
