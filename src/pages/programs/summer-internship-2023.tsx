@@ -1,11 +1,39 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import Image from "next/image";
+
 interface Project {
-  name?: string;
-  description?: string;
+  name: string;
+  description: string;
 }
 
-const projects : Project[] = [{}, {}, {}, {}, {}];
+const projects: Project[] = [
+  {
+    name: "Alyssa Molock",
+    description: "Neurological Insights into GAD",
+  },
+  {
+    name: "Anika Krishnan",
+    description: "Blood Transfusions: Limitations & Solutions",
+  },
+  {
+    name: "Audrey Ng",
+    description: "A Comparative Study of Machine Learning Approaches for Enhancing Copyright Protection Strategies",
+  },
+  {
+    name: "Mackenzie Lopes",
+    description:
+      "Exploring Innovative Approches for Advancing the 3 R's in Research: Moving Beyond Animal Testing through Biological, Biochemical, Ethical, and Multi-Cellular Strategies — Can We Eliminate the Need for Animal Testing?",
+  },
+  {
+    name: "Nairiti Rai",
+    description: "The Process of Decomposition",
+  },
+  {
+    name: "Vanessa Lemus",
+    description: "The Impact of Humans on Chickens",
+  },
+];
 
 const SummerProgram: NextPage = () => {
   return (
@@ -20,23 +48,33 @@ const SummerProgram: NextPage = () => {
       <h1 className="word-spacing-half w-full p-8 text-center font-jost text-5xl text-white">
         Showcase
       </h1>
-      <section className="grid grid-cols-4 gap-2 mb-4">
+      <section className="mb-4 grid grid-cols-3 gap-2 text-white">
         {projects.map((project, index) => (
-          <ProjectCard key={index} />
+          <ProjectCard key={index} project={project} />
         ))}
       </section>
     </main>
   );
 };
 
-const ProjectCard: React.FC<Project> = ({ name, description }) => {
+const ProjectCard: React.FC<{ project: Project }> = ({
+  project: { name, description },
+}) => {
   return (
-    <div className="flex flex-col items-center justify-center">
-      <div className="h-80 w-80 rounded-xl bg-gray-200"></div>
+    <div className="flex flex-col items-center justify-center gap-4">
       <div className="flex flex-col items-center justify-center">
-        <h2 className="font-jost text-2xl">{name}</h2>
-        <p className="font-jost text-lg">{description}</p>
+      <h2 className="font-jost text-2xl">{name}</h2>
+      <p className="font-jost text-md text-center">{description}</p>
       </div>
+      <Image
+        src={`/summer-2023/${
+          name.split(" ")[0]?.toLocaleLowerCase() ?? ""
+        }_poster.png`}
+        className="rounded-xl"
+        height={320}
+        width={320}
+        alt={name}
+      />
     </div>
   );
 };
