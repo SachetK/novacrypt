@@ -79,7 +79,7 @@ const ProjectCard: React.FC<{ project: Project }> = ({
       />
       <a
         className="text-md text-center font-jost font-bold hover:underline"
-        href={`/summer-2023/papers/${
+        href={`/summer-2023/paper/${
           name.split(" ")[0]?.toLocaleLowerCase() ?? ""
         }_paper.pdf`}
         download
