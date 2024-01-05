@@ -65,10 +65,11 @@ const ProjectCard: React.FC<{ project: Project }> = ({
     <div className="flex flex-col items-center justify-center gap-4">
       <div className="flex flex-col items-center justify-center">
         <h2 className="font-jost text-2xl">{name}</h2>
-        <p className="text-md text-center font-jost">{description}</p>
+        <a className="text-md text-center font-jost">{description}</a>
       </div>
+
       <Image
-        src={`/summer-2023/${
+        src={`/summer-2023/poster/${
           name.split(" ")[0]?.toLocaleLowerCase() ?? ""
         }_poster.png`}
         className="rounded-xl"
@@ -76,6 +77,15 @@ const ProjectCard: React.FC<{ project: Project }> = ({
         width={320}
         alt={name}
       />
+      <a
+        className="text-md text-center font-jost font-bold hover:underline"
+        href={`/summer-2023/papers/${
+          name.split(" ")[0]?.toLocaleLowerCase() ?? ""
+        }_paper.pdf`}
+        download
+      >
+        Link to Paper
+      </a>
     </div>
   );
 };
