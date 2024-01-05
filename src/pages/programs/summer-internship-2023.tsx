@@ -18,7 +18,8 @@ const projects: Project[] = [
   },
   {
     name: "Audrey Ng",
-    description: "A Comparative Study of Machine Learning Approaches for Enhancing Copyright Protection Strategies",
+    description:
+      "A Comparative Study of Machine Learning Approaches for Enhancing Copyright Protection Strategies",
   },
   {
     name: "Mackenzie Lopes",
@@ -63,8 +64,8 @@ const ProjectCard: React.FC<{ project: Project }> = ({
   return (
     <div className="flex flex-col items-center justify-center gap-4">
       <div className="flex flex-col items-center justify-center">
-      <h2 className="font-jost text-2xl">{name}</h2>
-      <p className="font-jost text-md text-center">{description}</p>
+        <h2 className="font-jost text-2xl">{name}</h2>
+        <p className="text-md text-center font-jost">{description}</p>
       </div>
       <Image
         src={`/summer-2023/${
