@@ -78,7 +78,7 @@ const ProjectCard: React.FC<{ project: Project }> = ({
         alt={name}
       />
       <a
-        className="text-md text-center font-jost font-bold hover:underline"
+        className="text-md text-center font-jost font-bold underline hover:opacity-10 transition-opacity"
         href={`/summer-2023/paper/${
           name.split(" ")[0]?.toLocaleLowerCase() ?? ""
         }_paper.pdf`}
